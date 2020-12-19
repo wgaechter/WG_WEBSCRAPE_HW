@@ -42,7 +42,7 @@ def scrape():
     conn = 'mongodb://localhost:27017'
     client = pymongo.MongoClient(conn)
 
-    db = client.mars
+    db = client.mars_test_13
 
     db.create_collection('facts')
     db.create_collection('images')
@@ -129,9 +129,6 @@ def scrape():
     return print("Completed Scrape and Mongo Connection")
 
 ### FLASK SERVER ###
-
-
-
 
 
 
