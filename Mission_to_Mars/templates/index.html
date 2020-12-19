@@ -14,29 +14,95 @@
     <h1 class="jumbotron">Mission to Mars<br>
       <a class="btn btn-primary" href="/scrape" role="button">Scrape New Data</a>
     </h1>
-    <article>
-      <header>
-        <h2 class="text-left">Latest Mars News</h2>
-        {% for n in news[:1] %}
-        <p class="text-left"><b>{{ n.title }}</b></p>
-        {% endfor %}
-      </header>
-      {% for n in news[:1] %}
-      <p class="text-left">{{ n.body }}</p>
-      {% endfor %}
-    </article>
-    <div class='container'>
-      <div class="row">
-        <div class="col-8">
-            {% for i in img if i.title == "large_img" %}
-            <img src='{{ i.URL }}' class="img-fluid">
+  </div>
+  <div class='container'>
+      <div class='row'>
+          <h2 class="text-left">Latest Mars News</h2>
+      </div>
+      <div class='row'>
+          <div class='col-md-12'>
+            {% for n in news[:1] %}
+            <p class="text-left"><b>{{ n.title }}</b></p>
             {% endfor %}
-          </div>
-        <div class="col-4">
-          table
+          </div>  
+      </div> 
+      <div class='row'>
+          <div class='col-sm-12'>
+              {% for n in news[:1] %}
+              <p class="text-left">{{ n.body }}</p>
+              {% endfor %}
+          </div> 
+      </div> 
+  </div>
+  <div class='container'>
+      <div class="row">
+        <div class="col-lg-8">
+          <h3>Latest Mars Image</h3>
+            {% for i in img if i.title == "large_img" %}
+            <img src='{{ i.URL }}' class="img-responsive">
+            {% endfor %}
         </div>
+        <div class="col-lg-4">
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Figure</th>
+                <tr>
+            </thead>
+            <tbody>
+                {% for fact in facts %}
+                <tr>
+                    <td>{{ fact.Item }}</td>
+                    <td>{{ fact.Figure }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="container text-center">
+    <div class='row'>
+      <h4><b>Mars' Hemispheres</b></h4>
     </div>
+    <div class='row'>
+      <div class="col-lg-6">
+        {% for i in img if i.title == "Cerberus Hemisphere Enhanced" %}
+        <p class='text-center'><b>{{ i.title }}</b></p>
+        <img src='{{ i.URL }}' class="img-responsive">
+        {% endfor %}
+      </div>
+      <div class="col-lg-6">
+        {% for i in img if i.title == "Schiaparelli Hemisphere Enhanced" %}
+        <p class='text-center'><b>{{ i.title }}</b></p>
+        <img src='{{ i.URL }}' class="img-responsive">
+        {% endfor %}
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class='row'>
+      <div class="col-lg-6">
+        {% for i in img if i.title == "Syrtis Major Hemisphere Enhanced" %}
+        <p class='text-center'><b>{{ i.title }}</b></p>
+        <img src='{{ i.URL }}' class="img-responsive">
+        {% endfor %}
+      </div>
+      <div class="col-lg-6">
+        {% for i in img if i.title == "Valles Marineris Hemisphere Enhanced" %}
+        <p class='text-center'><b>{{ i.title }}</b></p>
+        <img src='{{ i.URL }}' class="img-responsive">
+        {% endfor %}
+      </div>
   </div>
 </body>
+<br>
+<br>
+<br>
+<br>
 
 </html>

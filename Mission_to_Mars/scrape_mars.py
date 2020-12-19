@@ -128,7 +128,6 @@ def scrape():
     #return print(news_list)
     return print("Completed Scrape and Mongo Connection")
 
-### FLASK SERVER ###
 
 
 
